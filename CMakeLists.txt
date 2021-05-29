@@ -29,7 +29,7 @@ option(BUILD_SSL "Build secure socket layer support." ON)
 # Configuration
 #
 set(INCLUDE_DIR "${PROJECT_SOURCE_DIR}/source")
-include_directories( ${INCLUDE_DIR} SYSTEM)
+include_directories(${INCLUDE_DIR} SYSTEM)
 set(SOURCE_DIR "${PROJECT_SOURCE_DIR}/source/corvusoft/${PROJECT_NAME}")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
@@ -54,6 +54,7 @@ set_target_properties(
 # target_link_libraries(${LIBRARY_NAME} Boost::asio)
 if(BUILD_SSL)
   target_link_libraries(${LIBRARY_NAME} OpenSSL::Crypto OpenSSL::SSL)
+  target_compile_definitions(${LIBRARY_NAME} PRIVATE BUILD_SSL)
 endif()
 
 if(BUILD_TESTS)
