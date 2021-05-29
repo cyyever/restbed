@@ -473,7 +473,7 @@ namespace restbed
                 return;
             }
             
-            rule_engine( session, m_rules, [ this ]( const shared_ptr< Session > session )
+            rule_engine( session, m_rules, [ this ]( const shared_ptr< Session > &session )
             {
                 const auto resource_route = find_if( m_resource_routes.begin( ), m_resource_routes.end( ), bind( &ServiceImpl::resource_router, this, session, _1 ) );
                 

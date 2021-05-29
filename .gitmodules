@@ -10,3 +10,6 @@
 	path = dependency/openssl
 	url = https://github.com/corvusoft/openssl-dependency
 	branch = OpenSSL_1_0_2-stable
+[submodule "cmake/cyy_cmake"]
+	path = cmake/cyy_cmake
+	url = git@github.com:cyyever/cmake.git
